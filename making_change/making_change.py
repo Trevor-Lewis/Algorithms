@@ -16,7 +16,7 @@ def making_change(amount, denominations):
     )
 
 
-print(making_change(10, [1,5,10,25,50]))
+print(making_change(10, [1, 5, 10, 25, 50]))
 if __name__ == "__main__":
   # Test our your implementation from the command line
   # with `python making_change.py [amount]` with different amounts
