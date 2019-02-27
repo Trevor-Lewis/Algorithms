@@ -1,7 +1,7 @@
 #!/usr/bin/python
 
 import math
-
+  pass
 
 
 if __name__ == '__main__':

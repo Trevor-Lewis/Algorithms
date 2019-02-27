@@ -3,17 +3,7 @@
 import sys
 
 def making_change(amount, denominations):
-  if amount ==0:
-    return 1
-  elif amount<0:
-    return 0
-  elif len(denominations)==0 and amount>0:
-    return 0
-  else:
-    use_coin= denominations[-1]
-    return sum(making_change(amt, denominations[0:-1])
-    for amt in range(amount, -1, -use_coin)
-    )
+pass
 
 
 print(making_change(10, [1, 5, 10, 25, 50]))
