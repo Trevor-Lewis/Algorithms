@@ -3,24 +3,20 @@
 import argparse
 
 def find_max_profit(prices):
-  smallest = 0
-  smallestIdx = 0
-  biggest = 0
-  biggestIdx = 0
+    # set min price to 0 index
+    minPrice = prices[0]
+    # takes index 1 minus minPrice and sets maxProfit with that value
+    maxProfit = prices[1] - minPrice
+    # loop through each element in array
+    for currentPrice in prices[1:]:
+        # populate maxProfit using max() to calculate max 
+        maxProfit = max(currentPrice - minPrice, maxProfit)
+        # populate minPrice by using min() to calculate min
+        minPrice = min(currentPrice, minPrice)
 
-  for index, value in enumerate(prices):
-    if index == 0:
-      smallest = value
-      smallestIdx = index
-    if value < smallest and biggestIdx == False or not index > biggestIdx:
-      smallest = value
-      smallestIdx = index
-    if smallestIdx < index and value > smallest and value > biggest:
-      biggest = value
-      biggestIdx = index
-  print(biggest - smallest)
-  return biggest - smallest
+    return maxProfit
 
+# print(find_max_profit([1050, 270, 1540, 3800, 2]))
 
 if __name__ == '__main__':
   # This is just some code to accept inputs from the command line
